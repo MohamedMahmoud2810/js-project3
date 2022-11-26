@@ -1,49 +1,48 @@
 var contacts = [{
-
+    Name : "mohamed",
+    Number : "54543543564"
 }]
 
 
-function addContact(){
+function add(){
             var Newcontacts = {};
-            Newcontacts.name = prompt("Enter the name of the contact : ");
-            Newcontacts.number = prompt("Enter the phone number : ");
+            Newcontacts.Name = prompt("Enter the name of the contact : ");
+            Newcontacts.Number = prompt("Enter the phone number : ");
             contacts.push(Newcontacts);
-            
-            console.log("Name : " + Newcontacts.name + " Number = " + Newcontacts.number );
             
 }
 
-function searchContact(){
+function search(){
             var contact_Name_or_phone = prompt("enter contact name or phone : ");
             for (var i = 0; i < contacts.length; i++) {
                 var current_contact = contacts[i];
-                if(contact_Name_or_phone == current_contact.name || contact_Name_or_phone == current_contact.Number){
-                    alert("name " + current_contact.name + " Number " + current_contact.Number);
+                if(contact_Name_or_phone == current_contact.Name || contact_Name_or_phone == current_contact.Number){
+                    alert("name " + current_contact.Name + " Number " + current_contact.Number);
                 }
-                else{
-                    alert("Contact Not found");
-                }
-                
                 
             }
 }
 
-var operation = prompt("Enter The Operation : ");
 
-while (operation != null){
-    switch(operation){
-        case "add" :
-            addContact();
-            break;
-        
-        case "search" :
-            searchContact();
+function runApp(){
+    var stop = false;
+    do{
+        var operation = prompt("Enter The Operation : ");
+        switch(operation){
+            case "add" :
+                add();
             break;
             
+            case "search" :
+                search();
+            break;
+
+            case "exit":
+                stop = true;
+            break;
+                        
     }
-    
-    var operation = prompt("Enter The Operation : ");
+    }while(!stop)
 }
 
-
-
+runApp();

@@ -21,8 +21,11 @@ else{
     alert(".......wrong operation......... ");
 }
 
+
 var opNumbers = Number(prompt("Enter the number of operations that you want to add"));
 
 for (let i = 0; i < opNumbers.length ; i++) {
-        
+        if(opNumbers = 0){
+            alert ()
+        }
 }
